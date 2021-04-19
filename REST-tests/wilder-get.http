@@ -1,0 +1,3 @@
+# http 
+GET http://localhost:5000/api/wilder/read HTTP/1.1
+content-type: application/json
