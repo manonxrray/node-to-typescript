@@ -27,7 +27,7 @@ function isMongoError(error: Error): error is MongoError {
   return error.name === 'MongoError';
 }
 
-app.use((error: Error, req: Request, res: Response, _next: NextFunction) => {
+app.use((error: MongoError, req: Request, res: Response, _next: NextFunction) => {
   if (isMongoError(error)) {
     switch (error.code) {
       case 11000:
